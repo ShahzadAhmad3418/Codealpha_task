@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">,
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Quote App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <span class="logo">&#10077; QuoteBox</span>
+      <span class="tagline">A new thought, every click.</span>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CARD ===== -->
+  <main class="main">
+    <div class="card" id="quoteCard">
+
+      <!-- Category Badge -->
+      <span class="badge" id="quoteBadge">inspiration</span>
+
+      <!-- Big Opening Quote Mark -->
+      <div class="big-quote" aria-hidden="true">&ldquo;</div>
+
+      <!-- Quote Text -->
+      <p class="quote-text" id="quoteText">
+        Loading your quote...
+      </p>
+
+      <!-- Author -->
+      <div class="author-row">
+        <span class="author-line"></span>
+        <span class="author-name" id="quoteAuthor">—</span>
+      </div>
+
+      <!-- Footer: counter + button -->
+      <div class="card-footer">
+        <span class="counter" id="quoteCounter">Quote 1 of 25</span>
+        <button class="btn-new" id="newQuoteBtn" onclick="showNextQuote()">
+          <!-- Refresh SVG Icon -->
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"
+               xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M13.5 2.5v4h-4"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 8a6 6 0 0 1 10.2-4.3L13.5 5"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round"/>
+            <path d="M2.5 13.5v-4h4"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 8a6 6 0 0 1-10.2 4.3L2.5 11"
+                  stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round"/>
+          </svg>
+          New Quote
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Share / Copy Row -->
+    <div class="action-row">
+      <button class="btn-action" onclick="copyQuote()" title="Copy quote to clipboard">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="9" height="10" rx="1.5"
+                stroke="currentColor" stroke-width="1.4"/>
+          <path d="M3 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1"
+                stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        Copy
+      </button>
+      <span class="copy-feedback" id="copyFeedback">Copied!</span>
+    </div>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Built with HTML &middot; CSS &middot; JavaScript &nbsp;|&nbsp; No libraries required</p>
+  </footer>
+
+  <script src="quotes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
